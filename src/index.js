@@ -17,7 +17,7 @@
 import basicSwitch from "./components/switch.vue"; // 引入封装好的组件
 
 export default {
-  install (Vue, options = {}) {
-    Vue.component('basic-switch', basicSwitch);
-  }
+  install(Vue, options = {}) {
+    Vue.component("vueSwitch", basicSwitch);
+  },
 };

@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'basicSwitch',
+  name: 'vueSwitch',
   methods: {
     handleClick() {
       alert(1)

@@ -1,27 +1,25 @@
-import path from 'path';
-import vue from 'rollup-plugin-vue';
-import resolve from '@rollup/plugin-node-resolve';
-import postcss from 'rollup-plugin-postcss';
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import { terser } from 'rollup-plugin-terser';
+import path from "path";
+import vue from "rollup-plugin-vue";
+import resolve from "@rollup/plugin-node-resolve";
+import postcss from "rollup-plugin-postcss";
+import babel from "rollup-plugin-babel";
+import commonjs from "rollup-plugin-commonjs";
+import { terser } from "rollup-plugin-terser";
 
-let rrr = path.resolve(__dirname, 'package.json')
-const pkg = require(rrr);
-
+const pkg = require(path.resolve(__dirname, "package.json"));
 // 公共插件配置
 const getPlugins = () => {
   return [
     resolve({
-      extensions: ['.vue', '.js']
+      extensions: [".vue", ".js"],
     }),
     vue({
       include: /\.vue$/,
-      normalizer: '~vue-runtime-helpers/dist/normalize-component.js'
+      normalizer: "~vue-runtime-helpers/dist/normalize-component.js",
     }),
     commonjs(),
     postcss({
-      plugins: [require('autoprefixer')],
+      plugins: [require("autoprefixer")],
       // 把 css 放到和js同一目录
       // extract: true,
       // Minimize CSS, boolean or options for cssnano.
@@ -29,30 +27,38 @@ const getPlugins = () => {
       // Enable sourceMap.
       sourceMap: false,
       // This plugin will process files ending with these extensions and the extensions supported by custom loaders.
-      extensions: ['.sass', '.scss', '.css']
+      extensions: [".sass", ".scss", ".css"],
     }),
     babel({
-      exclude: 'node_modules/**',
-      extensions: ['.js', '.vue']
+      exclude: "node_modules/**",
+      extensions: [".js", ".vue"],
     }),
-    terser()
+    terser(),
   ];
 };
 
-let AAA = path.resolve(__dirname, pkg.entry)
 export default {
   input: path.resolve(__dirname, pkg.entry),
   output: [
     {
-      name: 'loadmore',
+      name: "loadmore",
       file: path.resolve(__dirname, pkg.main),
-      format: 'umd',
+      format: "umd",
       sourcemap: false,
       globals: {
-        vue: 'vue'
-      }
+        vue: "vue",
+      },
+    },
+    {
+      name: "loadmore",
+      file: path.join(__dirname, pkg.module),
+      format: "es",
+      sourcemap: false,
+      globals: {
+        vue: "vue",
+      },
     },
   ],
   plugins: getPlugins(),
-  external: ['vue']
+  external: ["vue"],
 };

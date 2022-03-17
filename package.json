@@ -1,13 +1,33 @@
 {
-  "name": "table-selector",
-  "version": "1.0.0",
+  "name": "vuejs-switch",
+  "version": "1.0.7",
+  "description": "A pull-down refresh and pull-up loadmore scroll component for Vue.js",
   "entry": "src/index.js",
   "main": "lib/index.js",
+  "module": "lib/index.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
-    "serve": "rollup -c -w"
+    "build": "yarn clean && rollup -c",
+    "test": "jest",
+    "serve": "rollup -c -w",
+    "lint": "eslint ./packages --ext .vue,.js,.ts",
+    "lint-fix": "eslint --fix ./packages --ext .vue,.js,.ts",
+    "clean": "rimraf ./lib",
+    "example:dev": "cd example && yarn install && yarn serve",
+    "example:build": "cd example && yarn install && yarn build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:staticdeng/vuejs-loadmore.git"
+  },
+  "keywords": [
+    "vue-loadmore",
+    "vue-refresh",
+    "vue-srcoll",
+    "loadmore",
+    "refresh",
+    "srcoll"
+  ],
+  "author": "staticdeng",
   "license": "MIT",
   "dependencies": {
     "vue": "^2.6.14"
@@ -39,5 +59,13 @@
     "rollup-plugin-vue": "^5.1.9",
     "vue-jest": "4.0.0-rc.0",
     "vue-template-compiler": "^2.6.14"
-  }
+  },
+  "browserslist": [
+    "Android >= 4.0",
+    "iOS >= 8"
+  ],
+  "bugs": {
+    "url": "https://github.com/staticdeng/vuejs-loadmore/issues"
+  },
+  "homepage": "https://github.com/staticdeng/vuejs-loadmore#readme"
 }
