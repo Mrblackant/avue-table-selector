@@ -3,7 +3,7 @@ import vue from "rollup-plugin-vue";
 import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
 import babel from "rollup-plugin-babel";
-import commonjs from "rollup-plugin-commonjs";
+import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 
 const pkg = require(path.resolve(__dirname, "package.json"));

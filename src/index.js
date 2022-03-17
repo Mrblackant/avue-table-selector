@@ -1,6 +1,6 @@
 import _Vue from "vue";
 import basicSwitch from "./components/switch.vue"; // 引入封装好的组件
-import dialogSelect from "./components/switch.vue"; // 引入封装好的组件
+import dialogSelect from "./components/dialogSelect/main.vue"; // 引入封装好的组件
 const coms = [basicSwitch, dialogSelect]; // 将来如果有其它组件,都可以写到这个数组里
 
 // 批量组件注册
