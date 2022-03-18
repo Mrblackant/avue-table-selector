@@ -1,9 +1,18 @@
 {
-  "name": "table-selector",
+  "name": "avue-table-selector",
   "version": "1.0.0",
   "entry": "src/index.js",
   "main": "lib/index.js",
   "module": "lib/index.module.js",
+  "description": "A table selector supporting multiple selections and single selections component base Vue.js and Avue",
+  "author": "Mrblackant",
+  "keywords": [
+    "avue-table-selector",
+    "vue-avue",
+    "avue",
+    "table-selector",
+    "Element"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
