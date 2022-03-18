@@ -38,8 +38,7 @@ export default {
     }
   },
   watch: {
-    formOpts(newVal) {
-      console.log('newVal', newVal)
+    formOpts() {
     }
   },
   mounted() {
