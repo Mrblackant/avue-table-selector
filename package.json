@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "module": "lib/index.module.js",
   "description": "A table selector supporting multiple selections and single selections component base Vue.js and Avue",
-  "author": "Mrblackant",
+  "author": "mrant",
   "keywords": [
     "avue-table-selector",
     "vue-avue",
